@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Consultant Allowance Homepage</title>
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    .container1 {
+      color: #f0ffff;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      justify-content: left;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #A7C7E7;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 1000px;
+      height: 580px;
+    }
+
+    .box-container {
+      display: none;
+      width: 900px;
+      height: 20px;
+      background-color: #fff;
+      color: black;
+      align-items: center;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+    }
+
+    .right-group {
+      display: flex;
+      flex-direction: row;
+      align-items: right;
+      justify-content: right;
+      margin: 10px;
+    }
+
+    .center-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin: 10px;
+    }
+
+    .left-group {
+      display: flex;
+      flex-direction: row;
+      align-items: left;
+      justify-content: left;
+      margin: 10px;
+    }
+
+    .input-group {
+      color: #333;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: left;
+      margin: 10px;
+    }
+
+    .input-group input[type="text"] {
+      display: none;
+      background-color: #333;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      padding: 10px;
+      margin: 0 10px;
+      width: 150px;
+      font-size: 14px;
+    }
+
+    .button1 {
+      background-color: #4169E1;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      padding: 10px;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .button {
+      background-color: #4169E1;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      padding: 10px;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0099cc;
+    }
+
+    .button:active {
+      transform: translateY(1px);
+    }
+
+    .button.new {
+      display: none;
+      background-color: #4169E1;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      padding: 10px;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .button.secondary {
+      display: none;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .button.secondary:hover {
+      background-color: #444;
+    }
+
+    .button.secondary:active {
+      transform: translateY(1px);
+    }
+
+    .box1-container {
+      display: none;
+      width: 980px;
+      height: 250px;
+      background-color: white;
+      border: none;
+      border-radius: 5px;
+      align-items: center;
+      margin: 10px;
+    }
+
+    .tab {
+      display: inline-block;
+      width: 480px;
+      height: 30px;
+      text-align: center;
+      background-color: lightgrey;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      padding: 4px;
+    }
+
+    .tab:hover {
+      background-color: gray;
+      color: white;
+    }
+
+    .content-container {
+      width: 960px;
+      height: 750px;
+      margin: 20px;
+      display: none;
+      color: black;
+      text-align: center;
+    }
+
+    .content {
+      display: none;
+    }
+
+    .content h1 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!--button id="connectButton" onclick="bundle.connect()">Connect to my Wallet</button-->
+  <!--image src = "screen.PNG"></image-->
+  <div class="container">
+    <image src="dolphinslogoheader.png"></image>
+    <div class="right-group">
+      <button class="button" id="connectButton" onclick="bundle.connect()">Connect to my Wallet</button>
+    </div>
+    <!--div class="input-group">
+        <button class="button" id="connectButton" onclick="bundle.connect()">Connect to my Wallet</button>
+      </div-->
+    <!--/div>
+    <!--input type="text" id="textBox" placeholder="Enter amount in MATIC that needs to be withdrawn">
+    <button id="executeButton" onclick="bundle.execute()">Withdraw from my Allowance</button-->
+    <!--div class="container"-->
+    <div class="center-group">
+      <label id="welcomemsg" style="display:none;">
+        <text style="color: black; font-weight: bold; align-items: center; justify-content: center;">Welcome
+          back&nbsp;</text>
+        <text style="color: #4169E1; font-weight: bold;">Brian!</text>
+      </label>
+    </div>
+
+    <div class="box-container" id="notificationbox">
+      <img style="display:none;" src="bellicon.png" id="notificationicon" alt="Icon" width="25" height="25" />
+      <label style="display:none;" id="notificationtext">
+        <text style="color: black;">&nbsp;&nbsp;You have&nbsp;</text>
+        <text style="color: black; font-weight: bold; text-decoration:underline">three</text>
+        <text style="color: black;">&nbsp;notifications!</text>
+      </label>
+      <!--span>&nbsp;&nbsp;You have three notifications!</span-->
+    </div>
+    <div class="input-group">
+      <!--label for="amount">Amount to Withdraw:</label-->
+
+      <input type="text" id="amount" placeholder="Enter amount in ETH">
+      <!--/div>
+    <div class="right-group"-->
+      <div>
+        <button class="button new" id="executeButton" onclick="bundle.execute()">Click here to Withdraw</button>
+        <!--button class="button secondary" onclick="reset()" id="resetButton">Reset</button-->
+      </div>
+    </div>
+    <div class="box1-container" id="summarybox">
+      <div class="tab" id="leftTab" onclick="bundle.showHere()">Latest Pay</div>
+      <div class="tab" id="rightTab" onclick="bundle.showThere()">Cumulative</div>
+      <div class="content-container">
+        <div id="here" class="content">
+          <!--h1>Here</h1-->
+          <text>Ethereum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0096</text>
+          <br></br>
+          <br></br>
+          <br></br>
+          <text
+            style="font-weight:bold;">Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0096</text>
+          <!--p>Ethereum&nbsp;&nbsp;&nbsp;&nbsp;0.0096</p-->
+        </div>
+        <div id="there" class="content">
+          <!--h1>There</h1-->
+          <!--p>Ethereum&nbsp;&nbsp;&nbsp;&nbsp;2.3</p-->
+          <text>Ethereum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3</text>
+          <br></br>
+          <br></br>
+          <br></br>
+          <text
+            style="font-weight:bold;">Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3</text>
+        </div>
+        <button class="button" id="download">Download PDF</button>
+      </div>
+    </div>
+  </div>
+  <!--image src="screen.PNG"></image-->
+</body>
+
+<script src="./dist/bundle.js" type="text/javascript"></script>
+
+</html>

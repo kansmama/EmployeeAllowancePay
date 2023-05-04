@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Consultant Allowance Homepage</title>
+	<style>
+		body {
+			background-color: #222;
+			color: #fff;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+
+		.input-group {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			margin: 10px;
+		}
+
+		.input-group input[type="text"] {
+			background-color: #333;
+			border: none;
+			border-radius: 5px;
+			color: #fff;
+			padding: 10px;
+			margin: 0 10px;
+			width: 200px;
+			font-size: 14px;
+		}
+
+		.button {
+			background-color: #00bfff;
+			border: none;
+			border-radius: 5px;
+			color: #fff;
+			padding: 10px;
+			margin: 10px;
+			cursor: pointer;
+			font-size: 14px;
+			transition: all 0.3s ease;
+		}
+
+		.button:hover {
+			background-color: #0099cc;
+		}
+
+		.button:active {
+			transform: translateY(1px);
+		}
+
+		.button.secondary {
+			background-color: #333;
+			color: #fff;
+		}
+
+		.button.secondary:hover {
+			background-color: #444;
+		}
+
+		.button.secondary:active {
+			transform: translateY(1px);
+		}
+	</style>
+</head>
+<body>
+  <div class="container">
+		<div class="input-group">
+			<button class="button" id="connectButton" onclick="bundle.connect()">Connect to my Wallet</button>
+			<button class="button secondary" onclick="reset()">Reset</button>
+		</div>
+	</div>
+  <div class="container">
+		<div class="input-group">
+			<label for="amount">Amount to Withdraw:</label>
+			<input type="text" id="amount" placeholder="Enter amount in MATIC that needs to be withdrawn">
+		</div>
+		<div class="input-group">
+			<button class="button" id="executeButton" onclick="bundle.execute()">Withdraw from my Allowance</button>
+			<button class="button secondary" onclick="reset()">Reset</button>
+		</div>
+	</div>
+	<script src="./dist/bundle.js" type="text/javascript"></script>
+	<!--script>
+		function addTo1000() {
+			var amount = parseFloat(document.getElementById("amount").value);
+			if (isNaN(amount)) {
+				alert("Please enter a valid number!");
+			} else {
+				var result = amount + 1000;
+				alert("Result: " + result);
+			}
+		}
+
+		function reset() {
+			document.getElementById("amount").value = "";
+		}
+	</script-->
+</body>
+</html>
