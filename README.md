@@ -1,3 +1,33 @@
+# EmployeeAllowancePay
+
+The structure of this code:
+
+There is a Smart Contract that is already deployed on Polygon Testnet Mumbai. Below are the details of the Smart Contract:
+Address: 0x9b625C219df9a06B72766bd8982B8578F39b99Aa
+Solidity File: AllowancePay.sol
+abi: AllowancePay.abi
+
+Reach out to the Smart Contract owner (Srinivas KNS - srinivas.kns@gmail.com) for the Employer to provide a daily allowance to you (the employee). You need to provide your Metamask Account address on Polygon Mumbai Testnet. For adding the Polygon Mumbai testnet manually, here are the fields you will need to add to your MetaMask:
+
+Network Name: Mumbai Testnet
+New RPC URL: https://rpc-mumbai.maticvigil.com/
+Chain ID: 80001
+Currency Symbol: MATIC
+Block Explorer URL: https://mumbai.polygonscan.com
+
+Once allowance has been set by the employer, you can simply do the following:
+
+1. Clone this repository on your machine.
+2. Check whether you have yarn installed on your device. If not, install it as per the instructions at the link https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
+3. Open Command Prompt by typing cmd in Windows Search.
+4. On the Command Prompt, Go to the folder EmployeeAllowancePay and run 'yarn install'
+5. Run 'yarn build'
+6. Run 'yarn http-server'
+7. On Chrome browser, open http://192.168.56.1:8080
+
+Below are the Reademe contents of the original project from git which was used as a base:
+ 
+
 # html-js-ethers-connect
 
 A small html file to show how to connect with metamask from the front-end. This is a minimalistic example what you can find in the [metamask docs](https://docs.metamask.io/guide/create-dapp.html#basic-action-part-1).
